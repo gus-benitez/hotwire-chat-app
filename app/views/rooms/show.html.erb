@@ -14,4 +14,4 @@
   <%= render @room.messages %>
 </div>
 
-<%= link_to "New Message", new_room_message_path(@room) %>
+<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top", data: { controller: "turbo-frame" } %>
