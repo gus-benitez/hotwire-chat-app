@@ -8,3 +8,26 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* Base turbo-frame styles */
+turbo-frame {
+  display: block;
+  border: 1px dashed #007bff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Recently updated state */
+turbo-frame.turbo-success {
+  border-color: #28a745;
+  transition: border-color 0.5s ease;
+}
