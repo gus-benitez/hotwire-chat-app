@@ -11,12 +11,9 @@ class MessagesController < ApplicationController
     @message = @room.messages.build(message_params)
 
     respond_to do |format|
-      format.html do
-        if @message.save
-          redirect_to @room
-        else
-          render :new, status: :unprocessable_entity
-        end
+      if @message.save
+        format.turbo_stream
+        format.html { redirect_to @message }
       end
     end
   end
