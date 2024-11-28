@@ -1,0 +1,4 @@
+<%= turbo_frame_tag dom_id(room), data: { controller: "turbo-frame" } do %>
+  <%= render room %>
+  <%= link_to "Edit this room", edit_room_path(room) %>
+<% end %>

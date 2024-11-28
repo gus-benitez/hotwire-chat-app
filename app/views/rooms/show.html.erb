@@ -1,16 +1,13 @@
 <p style="color: green"><%= notice %></p>
+<%= turbo_stream_from @room %>
 
-<%= turbo_frame_tag dom_id(@room), data: { controller: "turbo-frame" } do %>
-  <%= render @room %>
-  <%= link_to "Edit this room", edit_room_path(@room) %>
-<% end %>
+<%= render "room_with_frame", room: @room %>
 
 <div>
   <%= link_to "Back to rooms", rooms_path %>
   <%= button_to "Destroy this room", @room, method: :delete %>
 </div>
 
-<%= turbo_stream_from @room %>
 <div id="messages">
   <%= render @room.messages %>
 </div>
